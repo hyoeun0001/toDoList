@@ -9,6 +9,7 @@ import { addLog } from '../../store/slices/loggerSlice'
 import { v4 } from 'uuid'
 import { setModalData } from '../../store/slices/modalSlice'
 import { deleteButton, header, listWrapper, name } from './List.css'
+import { Droppable } from 'react-beautiful-dnd'
 
 
 type TListProps = {
@@ -47,7 +48,13 @@ const List : FC<TListProps> = ({
   }
 
   return (
-    <div className={listWrapper}>
+    <Droppable droppableId={list.listId}>
+      {provided => (
+        <div 
+          {...provided.droppableProps}
+          ref={provided.innerRef}
+          className={listWrapper}
+        >
       <div className={header}>
         <div className={name}>{list.listName}</div>
         <GrSubtract
@@ -69,11 +76,15 @@ const List : FC<TListProps> = ({
             />
           </div>
         ))}
+        {provided.placeholder}
         <ActionButton 
           boardId={boardId} 
           listId={list.listId}
         />
     </div>
+      )}
+    
+    </Droppable>
   )
 }
 

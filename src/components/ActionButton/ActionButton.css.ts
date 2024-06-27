@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { appContainer, vars } from "../../App.css";
+import { vars } from "../../App.css";
 
 export const taskButton = style({
     display:'flex',

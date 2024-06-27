@@ -1,5 +1,4 @@
-import { act, useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { useState } from 'react'
 import { appContainer, board, buttons, deleteBoardButton, loggerButton } from './App.css';
 import BoardList from './components/BoardList/BoardList';
 import ListsContainer from './components/ListsContainer/ListsContainer';
@@ -54,7 +53,7 @@ function App() {
     }
   }
 
-  const handleDragEnd = (result:any) =>{
+  const handleDragEnd = (result: any) =>{
     console.log(result);
     const {destination, source, draggableId} = result;
     console.log('lists', lists);

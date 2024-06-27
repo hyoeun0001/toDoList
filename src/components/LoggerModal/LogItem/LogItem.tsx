@@ -11,7 +11,7 @@ const LogItem : FC<TLogItemProps>= ({
   logItem
 }) => {
 
-  let timeOffset = new Date(Date.now()-Number(logItem.logTimestamp));
+  const timeOffset = new Date(Date.now()-Number(logItem.logTimestamp));
 
   const showOffsetTime = `
   ${timeOffset.getMinutes() > 0 ? `${timeOffset.getMinutes()}m` : ""} 

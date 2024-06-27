@@ -1,7 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { IBoard, IList, ITask } from "../../types";
-import { board } from "../../App.css";
-import { listsContainer } from "../../components/ListsContainer/ListsContainer.css";
 
 type TBoardsState = {
     modalActive: boolean;

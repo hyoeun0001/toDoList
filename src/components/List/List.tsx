@@ -43,6 +43,7 @@ const List : FC<TListProps> = ({
     taskId: string,
     task: ITask
   )=>{
+    console.log(`Task ID: ${taskId}`);
     dispatch(setModalData({boardId, listId, task}))
     dispatch(setModalActive(true));
   }
